@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="loginbody">
+
+  <section id="login">
+    <div class="login-actions">
+      <form>
+        <div class="field">
+          <input id="index" placeholder="Index">
+        </div>
+        <div class="field">
+          <input id="pass" type="password" placeholder="Password">
+        </div>
+        <div class="field select-wrap">
+          <select id="role">
+            <option value="">Select role</option>
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+          </select>
+        </div>
+        <button type="button" class="btn" onclick="login()">Login / Register</button>
+        <p id="status"></p>
+      </form>
+    </div>
+  </section>
+
+</body>
+</html>
