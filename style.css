@@ -24,8 +24,10 @@ body {
   font-family: "Manrope", sans-serif;
   color: var(--ink);
   background:
-    radial-gradient(circle at top left, rgba(48, 47, 47, 0.35), transparent 30%),
-    linear-gradient(180deg, #dbb888 0%, #f1b072 48%, #faaf3e 100%);
+    radial-gradient(circle at top left, rgba(228, 42, 42, 0.575), transparent 30%),
+    radial-gradient(circle at bottom right , rgba(241, 48, 48, 0.575), transparent 30%),
+    linear-gradient(180deg, #1a1a1a 0%, #3a3a3a 48%, #1b1b1b 100%);
+    
 }
 
 a {
@@ -38,25 +40,49 @@ img {
   max-width: 100%;
 }
 
+.brand-logo {
+  width: 60px;
+  height: 60px;
+}
+.brand-text {
+  display: flex;
+  text-align: left;
+  margin-right: 200px;
+  line-height: 1.1;
+}
+
+
+
+
 
 .loginbody {
   color: var(--ink);
-  background:
-    radial-gradient(circle at top left, rgba(99, 99, 99, 0.35), transparent 30%),
-    linear-gradient(180deg, #965f32 10%, #c09b6a 48%, #bb855a 100%);
+  background-image: url('media/images.jpg');
+  background-size: cover;
   min-height: 100vh;
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+.schoollogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Outfit", sans-serif;
+  color: var(--orange-strong);
+  margin-top: 100px;
+
+}
 
 .login-actions {
-  background: rgba(230, 117, 43, 0.767);
+  background:linear-gradient(135deg, rgba(255, 143, 69, 0.9), rgba(167, 96, 35, 0.9));
   display: flex;
+  justify-content: center;
+  
   flex-direction: column;
   gap:18px;
-  box-shadow: #a77f59 0px 2px 24px;
+  box-shadow: #966f4a 0px 2px 24px;
   padding: 80px;
 border-radius: 30px;
   width: 650px;
@@ -145,46 +171,13 @@ border-radius: 30px;
   padding: 16px 20px;
   border: 1px solid rgba(234, 106, 18, 0.12);
   border-radius: 24px;
-  background: rgba(148, 101, 48, 0.86);
+  background: rgba(252, 183, 105, 0.86);
   backdrop-filter: blur(14px);
   box-shadow: 0 10px 30px rgba(141, 71, 16, 0.08);
 }
 
 
 
-
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.brand-logo,
-.footer-logo {
-  width: 62px;
-  height: 62px;
-}
-
-.brand-text,
-.footer {
-  font-family: "Outfit", sans-serif;
-}
-
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.brand-text strong {
-  font-size: 1.02rem;
-  letter-spacing: 0.01em;
-}
-
-.brand-text span {
-  color: var(--muted);
-  font-size: 0.9rem;
-}
 
 .nav-links {
   display: flex;
@@ -211,9 +204,9 @@ border-radius: 30px;
 }
 
 .button-primary {
-  background: var(--orange-strong);
-  color: var(--white);
-  box-shadow: 0 18px 35px rgba(234, 106, 18, 0.25);
+  background: rgba(236, 159, 87, 0.96);
+  color: var(--ink);
+  box-shadow: 0 3px 3px rgba(206, 119, 48, 0.774);
 }
 
 .button-secondary,
@@ -243,7 +236,7 @@ border-radius: 30px;
 .sec1and2 {
   padding: clamp(28px, 5vw, 54px);
   background:
-    linear-gradient(135deg, rgba(218, 146, 78, 0.96), rgba(128, 102, 30, 0.92)),
+    linear-gradient(135deg, rgba(243, 162, 87, 0.96), rgba(156, 124, 37, 0.92)),
     linear-gradient(120deg, rgba(177, 101, 50, 0.08), transparent 42%);
   border: 1px solid rgba(234, 106, 18, 0.12);
   box-shadow: var(--shadow);
@@ -258,18 +251,23 @@ border-radius: 30px;
   font-size: 0.8rem;
 }
 
-.school_motto {
-  display: block;
+.eyebrow {
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   margin-bottom: 18px;
-  font-size: clamp(1.3rem, 2vw, 2.2rem);  
+  font-size: clamp(2rem, 2vw, 2.2rem);  
   line-height: 1.15;
   letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  
 }
 
 .sec1and2 h1,
-.section h2,
-.hero-card h2 {
+.sec1and2 h2 {
   margin: 0;
   font-family: "Outfit", sans-serif;
   line-height: 1.02;
@@ -355,7 +353,8 @@ border-radius: 30px;
 .intro-grid article,
 .program-card {
   padding: 26px;
-  background: rgba(255, 255, 255, 0.86);
+  background: linear-gradient(180deg, #be7132 , #ad7827 );
+  color: var(--ink);
   border: 1px solid rgba(234, 106, 18, 0.12);
   box-shadow: 0 18px 40px rgba(124, 69, 18, 0.08);
 }
@@ -372,7 +371,7 @@ border-radius: 30px;
 .stats p,
 .footer-copy {
   margin-bottom: 0;
-  color: var(--muted);
+  color: var(--ink);
   line-height: 1.75;
 }
 
@@ -393,9 +392,11 @@ border-radius: 30px;
 }
 
 .community-panel {
+  margin-top: 40px;
   padding: clamp(28px, 5vw, 44px);
-  background: linear-gradient(135deg, #fff8f0, #ffffff 55%, #fff1e0);
+  background: linear-gradient(135deg, #a5743f, #a8632b 55%, #a17238);
   border: 1px solid rgba(234, 106, 18, 0.1);
+  
   box-shadow: var(--shadow);
 }
 
@@ -407,11 +408,13 @@ border-radius: 30px;
 .stats article {
   padding: 20px;
   border-radius: var(--radius-medium);
-  background: var(--white);
+  background:#ddba92e6;
   border: 1px solid rgba(234, 106, 18, 0.1);
+color: var(--ink);
 }
 
 .stats strong {
+  
   font-family: "Outfit", sans-serif;
   font-size: 1.2rem;
 }
@@ -423,7 +426,7 @@ border-radius: 30px;
   gap: 24px;
   margin: 24px clamp(20px, 4vw, 56px) 36px;
   padding: 24px 28px;
-  background: #fff4e8;
+  background: #634321;
   border: 1px solid rgba(234, 106, 18, 0.12);
 }
 
@@ -442,10 +445,7 @@ border-radius: 30px;
   }
 
   .header,
-  .footer {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+ 
 
   .nav-links {
     width: 100%;
@@ -470,9 +470,7 @@ border-radius: 30px;
     padding: 0 16px 20px;
   }
 
-  .brand {
-    align-items: flex-start;
-  }
+  
 
   .nav-links {
     gap: 12px;
