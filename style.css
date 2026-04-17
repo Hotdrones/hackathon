@@ -168,15 +168,17 @@ height:450px;
 
 
 
-.loginbody {
-  color: var(--ink);
+.loginbody  {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
   background-image: url('media/charlie.jpg');
   background-size: cover;
-  height: 100%;
-  width : 100%;
-  min-width: 100dvh;
-  min-height: 100dvh;
-  margin: 0;
+  background-position: center center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -200,8 +202,11 @@ height:450px;
   gap:18px;
   box-shadow: #966f4a 0px 2px 24px;
   padding: 80px;
-border-radius: 30px;
-  width: 650px;
+  border-radius: 30px;
+  max-width: 650px;
+  width: 90px;
+  overflow-x: hidden;
+ 
   
 }
 
