@@ -197,16 +197,13 @@ height:450px;
   background:linear-gradient(135deg, rgba(255, 143, 69, 0.9), rgba(167, 96, 35, 0.9));
   display: flex;
   justify-content: center;
-  
+  align-items: center;
   flex-direction: column;
   gap:18px;
   box-shadow: #966f4a 0px 2px 24px;
   padding: 80px;
   border-radius: 30px;
-  max-width: 650px;
-  width: 90%;
-  overflow-x: hidden;
- 
+  width: 650px;
   
 }
 
