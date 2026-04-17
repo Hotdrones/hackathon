@@ -26,7 +26,7 @@ function login() {
   }
 
   if (!role) {
-    status.style.color = "red";
+    status.style.color = "white";
     status.textContent = "Please select a role.";
     return;
   }
@@ -34,17 +34,20 @@ function login() {
   const match = db[role].find(u => u.index === index && u.password === password);
 
   if (!match) {
-    status.style.color = "red";
+    status.style.color = "white";
     status.textContent = "Incorrect index or password.";
     return;
   }
 
   // Login success
   if (role === "student") {
-    status.style.color = "green";
+    document.location.href = "homepage.html";
+    status.style.color = "white";
     status.textContent = "Welcome, " + match.name + "! (" + match.grade + " — " + match.subject + ")";
+    // document.location.href = "homepage.html";
   } else {
-    status.style.color = "green";
+    document.location.href = "homepage.html";
+    status.style.color = "white";
     status.textContent = "Welcome, " + match.name + "! (" + match.subject + " — " + match.room + ")";
   }
 }

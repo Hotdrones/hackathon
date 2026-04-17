@@ -274,6 +274,9 @@ height:450px;
 .login-actions .btn:hover {
   opacity: 0.92;
 }
+.field{
+  color: var(--ink);
+}
 
 
 
