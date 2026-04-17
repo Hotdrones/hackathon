@@ -41,6 +41,14 @@ img {
   display: block;
   max-width: 100%;
 }
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+
+
 
 .school-logo {
   width: 60px;
