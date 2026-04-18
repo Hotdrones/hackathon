@@ -1,61 +1,78 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imaduddin Chat</title>
+  <script src="https://cdn.jsdelivr.net/npm/stream-chat/dist/stream-chat.browser.js"></script>
+  <link rel="stylesheet" href="chatstyle.css">
+</head>
+<body>
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body class="contactpage">
-         <header class="headsec1and2">
-    <nav class="header">
-        <span class ="logoshi">
-        <img src="media/imaduddin-school-logo.png" alt="Imaduddin School logo" class="school-logo">
-        <span class="schoolname">
-          <strong>Imaduddin School</strong>
-        </span>
-        </span>
-      </a>
-        <div class="nav-links" style="color:white">
-        <a href="homepage.html">Home</a>
-        <a href="tables.html">Time Tables/Extras</a>
-        <a href="assignments.html">Assignments</a>
-        <a href="chats.html">Chats</a>
+<div class="topbar">
+  <h1>Imaduddin Portal</h1>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <span id="topbar-user"></span>
+    <button onclick="logout()">Sign out</button>
+  </div>
+</div>
 
-        <a class="button button-light" href="contact.html">Contact</a>
-      </div>
-    </nav>
-    <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/69e2ae60b779071c3490d414/1jmenias2';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+<div class="app">
 
-
-
-
-
-
-         <footer class="footer" id="contact">
-    <div>
-    <img src="media/imaduddin-school-logo.png" alt="Imaduddin School logo" class="school-logo">
-      <p>Imaduddin School, Maldives copyright © 2026</p>
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <button id="tab-dm" class="active" onclick="switchTab('dm')">Direct</button>
+      <button id="tab-group" onclick="switchTab('group')">Groups</button>
     </div>
-    </footer> 
-        <script src="" async defer></script>
-    </body>
+
+    <div class="dm-search" id="dm-search">
+      <input type="text" placeholder="Search users..." oninput="searchUsers(this.value)" />
+    </div>
+    <div class="user-list" id="user-list"></div>
+
+    <button class="new-group-btn" id="new-group-btn" onclick="showGroupModal()">+ Create Group</button>
+    <div class="channel-list" id="channel-list"></div>
+  </div>
+
+  <!-- CHAT AREA -->
+  <div class="chat-area" id="chat-area">
+    <div class="empty-state" id="empty-state">
+      <div class="icon">💬</div>
+      <p>Select a conversation to start chatting</p>
+    </div>
+
+    <div id="active-chat" style="display:none; flex-direction:column; flex:1; overflow:hidden;">
+      <div class="chat-header">
+        <button class="back-btn" onclick="closeMobileChat()">‹</button>
+        <div>
+          <div class="chat-header-name" id="chat-header-name"></div>
+          <div class="chat-header-sub" id="chat-header-sub"></div>
+        </div>
+      </div>
+      <div class="messages" id="messages"></div>
+    </div>
+
+    <div class="input-area" id="input-area">
+      <textarea id="msg-input" placeholder="Type a message..." rows="1"
+        onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
+      <button class="send-btn" onclick="sendMessage()">&#10148;</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- GROUP MODAL -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <h3>Create a Group</h3>
+    <input type="text" id="group-name-input" placeholder="Group name e.g. Grade 10 Science" />
+    <div class="modal-btns">
+      <button class="cancel" onclick="hideGroupModal()">Cancel</button>
+      <button class="confirm" onclick="createGroup()">Create</button>
+    </div>
+  </div>
+</div>
+
+<script src="chat.js"></script>
+</body>
 </html>
-
-
-
